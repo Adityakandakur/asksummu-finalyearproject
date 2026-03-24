@@ -162,24 +162,25 @@ nav{position:sticky;top:0;z-index:500;background:rgba(7,9,15,.93);backdrop-filte
 .p3-lock-sub{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
 .p3-soon{position:absolute;top:1.1rem;left:50%;transform:translateX(-50%);background:rgba(124,76,201,.1);border:1px solid rgba(124,76,201,.26);border-radius:4px;padding:3px 11px;font-size:.56rem;font-family:'JetBrains Mono',monospace;color:var(--p3);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;}
 
-/* TEAM SCRATCH (unchanged) */
+/* TEAM SECTION — PROFESSIONAL REDESIGN */
 .team-container{position:relative;margin-bottom:1.8rem;}
-.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;}
-.team-scratch-overlay{position:absolute;inset:0;background:repeating-linear-gradient(45deg,#302010 0px,#302010 8px,#180e04 8px,#180e04 16px);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:auto;z-index:20;color:#cca85a;font-weight:bold;box-shadow:inset 0 0 28px rgba(0,0,0,.8);cursor:grabbing;border:1px solid var(--border2);}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-top:0.5rem;}
+.team-scratch-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(45deg,#302010 0px,#302010 8px,#180e04 8px,#180e04 16px);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:auto;z-index:20;color:#cca85a;font-weight:bold;box-shadow:inset 0 0 28px rgba(0,0,0,.8);cursor:grabbing;border:1px solid var(--border2);backdrop-filter:blur(2px);}
 .tso-icon{font-size:2.6rem;margin-bottom:.7rem;opacity:.82;}
 .tso-text{font-family:'JetBrains Mono',monospace;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;}
-.scratch-card{background:var(--surface);padding:1.7rem;min-height:195px;}
-.sc-emoji{font-size:1.35rem;margin-bottom:.45rem;}
-.sc-header{display:flex;align-items:flex-start;justify-content:space-between;gap:.45rem;margin-bottom:.18rem;}
-.sc h4{font-size:.92rem;font-weight:700;color:var(--white);}
-.sc-lead-badge{font-family:'JetBrains Mono',monospace;font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;color:#000;background:var(--p1);padding:2px 7px;border-radius:3px;flex-shrink:0;margin-top:.08rem;}
-.sc .role{font-size:.66rem;font-weight:600;margin-bottom:.4rem;}
-.sc .desc{font-size:.75rem;color:var(--muted);line-height:1.55;margin-bottom:.55rem;}
-.sc-links{display:flex;flex-direction:column;gap:.28rem;}
-.sc-link{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--muted);text-decoration:none;letter-spacing:.03em;transition:color .2s;}
-.sc-link:hover{color:var(--p1);}
-.sc-lbl{color:var(--faint);font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;margin-right:3px;}
-.p1r{color:var(--p1)}.p2r{color:var(--p2)}.p3r{color:var(--p3)}
+.scratch-card{background:var(--surface);border:1px solid var(--border2);border-radius:20px;padding:1.6rem;transition:all 0.2s ease;height:100%;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.scratch-card:hover{border-color:rgba(201,168,76,.35);transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(0,0,0,.4);}
+.sc-emoji{font-size:1.8rem;margin-bottom:.6rem;opacity:.9;}
+.sc-header{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.25rem;flex-wrap:wrap;}
+.sc h4{font-size:1.1rem;font-weight:700;color:var(--white);letter-spacing:-0.01em;}
+.sc-lead-badge{font-family:'JetBrains Mono',monospace;font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;color:#000;background:var(--p1);padding:2px 9px;border-radius:20px;flex-shrink:0;}
+.sc .role{font-size:.7rem;font-weight:500;margin-bottom:.65rem;color:var(--p1);letter-spacing:.02em;border-left:2px solid var(--p1);padding-left:8px;}
+.sc .desc{font-size:.78rem;color:var(--muted);line-height:1.55;margin-bottom:1rem;flex:1;}
+.sc-links{display:flex;flex-direction:column;gap:.45rem;margin-top:.2rem;border-top:1px solid rgba(201,168,76,.12);padding-top:.8rem;}
+.sc-link{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--muted);text-decoration:none;letter-spacing:.02em;transition:all .2s;width:fit-content;}
+.sc-link:hover{color:var(--p1);transform:translateX(3px);}
+.sc-lbl{color:var(--faint);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;margin-right:4px;}
+.p1r{color:var(--p1);}.p2r{color:var(--p2);}.p3r{color:var(--p3);}
 
 /* ABOUT (unchanged) */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:1.7rem;}
@@ -281,7 +282,7 @@ footer strong{color:var(--text);}
   .feat-grid{grid-template-columns:1fr;}
   .about-grid{grid-template-columns:1fr;}
   .proj-sum-grid{grid-template-columns:1fr;}
-  .team-grid{grid-template-columns:1fr 1fr;}
+  .team-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr));}
   .credits-gap.open{animation:gapOpenM .8s cubic-bezier(.34,1.2,.64,1) forwards;}
   @keyframes gapOpenM{0%{width:0;opacity:0}40%{opacity:1}100%{width:95vw;opacity:1}}
   .logo-stage{width:200px;height:200px;}
@@ -317,7 +318,7 @@ footer strong{color:var(--text);}
   </div>
 </div>
 
-<!-- PASSWORD MODAL -->
+<!-- PASSWORD MODAL (unchanged) -->
 <div id="pwModal" role="dialog" aria-modal="true">
   <div class="pw-box">
     <div id="pwForm">
@@ -366,32 +367,11 @@ footer strong{color:var(--text);}
     <div class="cred-name" id="cName"></div>
     <div class="cred-sub" id="cSub"></div>
     <div class="papers-block" id="papersBlock">
-      <div class="paper-item">
-        <div class="paper-num">P·01</div>
-        <div class="paper-body">
-          <div class="paper-title">SparshaX — Affordable Refreshable Braille Display via Cam-Magnet Electromechanical Actuation</div>
-          <div class="paper-meta">SparshaX &nbsp;·&nbsp; <span>Hardware · Accessibility · AI · Bluetooth</span> &nbsp;·&nbsp; 2025–26</div>
-        </div>
-      </div>
-      <div class="paper-item">
-        <div class="paper-num">P·02</div>
-        <div class="paper-body">
-          <div class="paper-title">KhetRakshak — Solar-Docked Drone System for AI Weed Elimination & Precision Farm Intelligence</div>
-          <div class="paper-meta">KhetRakshak &nbsp;·&nbsp; <span>Robotics · Precision Agriculture · Edge AI · Rural IoT</span> &nbsp;·&nbsp; 2025–26</div>
-        </div>
-      </div>
-      <div class="paper-item">
-        <div class="paper-num">P·03</div>
-        <div class="paper-body">
-          <div class="paper-title">Research Paper — Title Pending</div>
-          <div class="paper-meta">Coming Soon &nbsp;·&nbsp; <span>Under Development</span> &nbsp;·&nbsp; 2025–26</div>
-        </div>
-      </div>
+      <div class="paper-item"><div class="paper-num">P·01</div><div class="paper-body"><div class="paper-title">SparshaX — Affordable Refreshable Braille Display via Cam-Magnet Electromechanical Actuation</div><div class="paper-meta">SparshaX &nbsp;·&nbsp; <span>Hardware · Accessibility · AI · Bluetooth</span> &nbsp;·&nbsp; 2025–26</div></div></div>
+      <div class="paper-item"><div class="paper-num">P·02</div><div class="paper-body"><div class="paper-title">KhetRakshak — Solar-Docked Drone System for AI Weed Elimination & Precision Farm Intelligence</div><div class="paper-meta">KhetRakshak &nbsp;·&nbsp; <span>Robotics · Precision Agriculture · Edge AI · Rural IoT</span> &nbsp;·&nbsp; 2025–26</div></div></div>
+      <div class="paper-item"><div class="paper-num">P·03</div><div class="paper-body"><div class="paper-title">Research Paper — Title Pending</div><div class="paper-meta">Coming Soon &nbsp;·&nbsp; <span>Under Development</span> &nbsp;·&nbsp; 2025–26</div></div></div>
     </div>
-    <div class="cred-badge" id="cbadge">
-      <span class="cdot"></span>
-      <span>Team asksummu &nbsp;·&nbsp; Final Year Engineering 2025–26</span>
-    </div>
+    <div class="cred-badge" id="cbadge"><span class="cdot"></span><span>Team asksummu &nbsp;·&nbsp; Final Year Engineering 2025–26</span></div>
   </div>
   <button class="iskip" id="iskip">SKIP →</button>
 </div>
@@ -406,11 +386,7 @@ footer strong{color:var(--text);}
   <button class="hamburger" id="hbtn"><span></span><span></span><span></span></button>
 </nav>
 <div class="menu-overlay" id="moverlay">
-  <ul class="menu-links">
-    <li><a href="#projects"><span>01</span>Projects</a></li>
-    <li><a href="#team"><span>02</span>Team</a></li>
-    <li><a href="#about"><span>03</span>About</a></li>
-  </ul>
+  <ul class="menu-links"><li><a href="#projects"><span>01</span>Projects</a></li><li><a href="#team"><span>02</span>Team</a></li><li><a href="#about"><span>03</span>About</a></li></ul>
 </div>
 
 <!-- HERO -->
@@ -420,26 +396,12 @@ footer strong{color:var(--text);}
     <div class="team-badge">Team asksummu &nbsp;·&nbsp; Final Year Engineering &nbsp;·&nbsp; 2025–26</div>
     <h1>Two <span class="gold">Systems.</span><br/>One Purpose.</h1>
     <p class="hero-sub">We are a team of final-year engineers building technology that is purposeful, affordable, and designed for those who need it most — from people who cannot see, to farmers who cannot afford to lose a harvest.</p>
-    <div class="hero-meta">
-      <div class="meta-pill"><span class="dot-live"></span>3 Active Proposals</div>
-      <div class="meta-pill">📍 Academic Year 2025–26</div>
-    </div>
+    <div class="hero-meta"><div class="meta-pill"><span class="dot-live"></span>3 Active Proposals</div><div class="meta-pill">📍 Academic Year 2025–26</div></div>
   </div>
 </section>
 
 <!-- TICKER -->
-<div class="credit-banner">
-  <div class="credit-track">
-    <span class="credit-item">✦ <strong>asksummu</strong> · AI · Robotics · Smart Automation</span>
-    <span class="credit-item">⠿ P·01 SparshaX — Refreshable Braille Display</span>
-    <span class="credit-item">✦ P·02 KhetRakshak — Autonomous Farm Drone</span>
-    <span class="credit-item">◆ Built for Impact · Engineered from First Principles</span>
-    <span class="credit-item">✦ <strong>asksummu</strong> · AI · Robotics · Smart Automation</span>
-    <span class="credit-item">⠿ P·01 SparshaX — Refreshable Braille Display</span>
-    <span class="credit-item">✦ P·02 KhetRakshak — Autonomous Farm Drone</span>
-    <span class="credit-item">◆ Built for Impact · Engineered from First Principles</span>
-  </div>
-</div>
+<div class="credit-banner"><div class="credit-track"><span class="credit-item">✦ <strong>asksummu</strong> · AI · Robotics · Smart Automation</span><span class="credit-item">⠿ P·01 SparshaX — Refreshable Braille Display</span><span class="credit-item">✦ P·02 KhetRakshak — Autonomous Farm Drone</span><span class="credit-item">◆ Built for Impact · Engineered from First Principles</span><span class="credit-item">✦ <strong>asksummu</strong> · AI · Robotics · Smart Automation</span><span class="credit-item">⠿ P·01 SparshaX — Refreshable Braille Display</span><span class="credit-item">✦ P·02 KhetRakshak — Autonomous Farm Drone</span><span class="credit-item">◆ Built for Impact · Engineered from First Principles</span></div></div>
 
 <!-- PROJECTS -->
 <div class="section" id="projects">
@@ -447,54 +409,67 @@ footer strong{color:var(--text);}
   <div class="section-title">Scratch to Explore</div>
   <div class="projects-grid">
     <div class="project-card p1-card" id="card1" onclick="openModal(1)">
-      <div class="card-content">
-        <div class="card-num">PROPOSAL 01 / 03 &nbsp;·&nbsp; SPARSHAX</div>
-        <span class="card-icon">⠿</span>
-        <div class="card-title">SparshaX</div>
-        <div class="card-tagline">A Braille display reimagined from first principles — cam-magnet actuation replaces a ₹8,000 piezo component with one costing under ₹80. Bluetooth, AI OCR, built-in learning mode.</div>
-        <div class="card-tags"><span class="tag">Hardware</span><span class="tag">Accessibility</span><span class="tag">AI</span></div>
-        <div class="card-expand">View Proposal <span>→</span></div>
-      </div>
-      <div class="project-scratch-cover" id="c1" data-p="0" data-done="false">
-        <div class="scratch-badge-top">🚀 Flagship · Proposal 01</div>
-        <span class="scratch-icon">⠿</span>
-        <div class="scratch-text">Scratch to Reveal</div>
-      </div>
+      <div class="card-content"><div class="card-num">PROPOSAL 01 / 03 &nbsp;·&nbsp; SPARSHAX</div><span class="card-icon">⠿</span><div class="card-title">SparshaX</div><div class="card-tagline">A Braille display reimagined from first principles — cam-magnet actuation replaces a ₹8,000 piezo component with one costing under ₹80. Bluetooth, AI OCR, built-in learning mode.</div><div class="card-tags"><span class="tag">Hardware</span><span class="tag">Accessibility</span><span class="tag">AI</span></div><div class="card-expand">View Proposal <span>→</span></div></div>
+      <div class="project-scratch-cover" id="c1" data-p="0" data-done="false"><div class="scratch-badge-top">🚀 Flagship · Proposal 01</div><span class="scratch-icon">⠿</span><div class="scratch-text">Scratch to Reveal</div></div>
     </div>
     <div class="project-card p2-card" id="card2" onclick="openModal(2)">
-      <div class="card-content">
-        <div class="card-num">PROPOSAL 02 / 03 &nbsp;·&nbsp; KHETRAKSHAK</div>
-        <span class="card-icon"><svg width="1em" height="1em" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle"><rect x="27" y="27" width="10" height="10" rx="2.5" fill="currentColor"/><line x1="32" y1="32" x2="14" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="14" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><ellipse cx="14" cy="14" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="50" cy="14" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="14" cy="50" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="50" cy="50" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><circle cx="14" cy="14" r="3" fill="currentColor"/><circle cx="50" cy="14" r="3" fill="currentColor"/><circle cx="14" cy="50" r="3" fill="currentColor"/><circle cx="50" cy="50" r="3" fill="currentColor"/></svg></span>
-        <div class="card-title">KhetRakshak</div>
-        <div class="card-tagline">A solar-docked farm drone permanently stationed in the field — laser weed removal, crop health AI, and full SMS control from any basic 2G phone. No internet required.</div>
-        <div class="card-tags"><span class="tag">Robotics</span><span class="tag">Edge AI</span><span class="tag">Agriculture</span></div>
-        <div class="card-expand">View Proposal <span>→</span></div>
-      </div>
-      <div class="project-scratch-cover" id="c2" data-p="0" data-done="false">
-        <span class="scratch-icon"><svg width="1em" height="1em" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle"><rect x="27" y="27" width="10" height="10" rx="2.5" fill="currentColor"/><line x1="32" y1="32" x2="14" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="14" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><ellipse cx="14" cy="14" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="50" cy="14" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="14" cy="50" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="50" cy="50" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><circle cx="14" cy="14" r="3" fill="currentColor"/><circle cx="50" cy="14" r="3" fill="currentColor"/><circle cx="14" cy="50" r="3" fill="currentColor"/><circle cx="50" cy="50" r="3" fill="currentColor"/></svg></span>
-        <div class="scratch-text">Scratch to Reveal</div>
-      </div>
+      <div class="card-content"><div class="card-num">PROPOSAL 02 / 03 &nbsp;·&nbsp; KHETRAKSHAK</div><span class="card-icon"><svg width="1em" height="1em" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle"><rect x="27" y="27" width="10" height="10" rx="2.5" fill="currentColor"/><line x1="32" y1="32" x2="14" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="14" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><ellipse cx="14" cy="14" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="50" cy="14" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="14" cy="50" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="50" cy="50" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><circle cx="14" cy="14" r="3" fill="currentColor"/><circle cx="50" cy="14" r="3" fill="currentColor"/><circle cx="14" cy="50" r="3" fill="currentColor"/><circle cx="50" cy="50" r="3" fill="currentColor"/></svg></span><div class="card-title">KhetRakshak</div><div class="card-tagline">A solar-docked farm drone permanently stationed in the field — laser weed removal, crop health AI, and full SMS control from any basic 2G phone. No internet required.</div><div class="card-tags"><span class="tag">Robotics</span><span class="tag">Edge AI</span><span class="tag">Agriculture</span></div><div class="card-expand">View Proposal <span>→</span></div></div>
+      <div class="project-scratch-cover" id="c2" data-p="0" data-done="false"><span class="scratch-icon"><svg width="1em" height="1em" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle"><rect x="27" y="27" width="10" height="10" rx="2.5" fill="currentColor"/><line x1="32" y1="32" x2="14" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="14" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><line x1="32" y1="32" x2="50" y2="50" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><ellipse cx="14" cy="14" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="50" cy="14" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="14" cy="50" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><ellipse cx="50" cy="50" rx="9" ry="3.5" fill="currentColor" opacity=".85"/><circle cx="14" cy="14" r="3" fill="currentColor"/><circle cx="50" cy="14" r="3" fill="currentColor"/><circle cx="14" cy="50" r="3" fill="currentColor"/><circle cx="50" cy="50" r="3" fill="currentColor"/></svg></span><div class="scratch-text">Scratch to Reveal</div></div>
     </div>
     <div class="p3-locked"><div class="p3-soon">Coming Soon</div><div class="p3-locked-inner"><div class="p3-lock-badge">🔒</div><div class="p3-lock-title">Proposal 03</div><div class="p3-lock-sub">Under Development · 2025–26</div></div></div>
   </div>
 </div>
 
-<!-- TEAM -->
+<!-- TEAM SECTION (Professional Redesign with Portfolio) -->
 <div class="section" id="team" style="padding-top:2.5rem;padding-bottom:2rem">
   <div class="section-label">The People Behind It</div>
   <div class="section-title">Team asksummu</div>
   <div class="team-container">
     <div class="team-grid">
-      <div class="scratch-card"><div class="sc-emoji">👑</div><div class="sc-header"><h4>Aditya Kandakur</h4><span class="sc-lead-badge">LEAD</span></div><div class="role p1r">Team Lead · Research &amp; Hardware</div><div class="desc">Leads the full research agenda — hardware design, cam-magnet actuation, PCB development, prototype validation, and all academic documentation.</div><div class="sc-links"><a class="sc-link" href="mailto:kandakuraditya@gmail.com"><span>✉</span><span class="sc-lbl">email</span>kandakuraditya@gmail.com</a></div></div>
-      <div class="scratch-card"><div class="sc-emoji">💻</div><div class="sc-header"><h4>Shaumik Narvekar</h4></div><div class="role p2r">Software Lead</div><div class="desc">Leads application development and backend architecture — full-stack interfaces, AI encoding engines, system integration, and API development across both projects.</div></div>
-      <div class="scratch-card"><div class="sc-emoji">🤖</div><div class="sc-header"><h4>Sanju</h4></div><div class="role p3r">AI Development Lead</div><div class="desc">Owns the AI and vision stack — computer vision pipelines, edge AI models, OCR integration, and intelligent decision systems for both SparshaX and KhetRakshak.</div></div>
-      <div class="scratch-card"><div class="sc-emoji">⚙️</div><div class="sc-header"><h4>Christlan Costa</h4></div><div class="role p1r">Hardware &amp; Documentation</div><div class="desc">Handles prototype assembly, solenoid coil winding, PCB layout, technical writing, and circuit documentation across both hardware proposals.</div></div>
+      <!-- Aditya Kandakur — Leader with Portfolio -->
+      <div class="scratch-card">
+        <div class="sc-emoji">👑</div>
+        <div class="sc-header">
+          <h4>Aditya Kandakur</h4>
+          <span class="sc-lead-badge">LEAD</span>
+        </div>
+        <div class="role p1r">Team Lead · Research &amp; Hardware</div>
+        <div class="desc">Drives the full research agenda — hardware design, cam-magnet mechanism, PCB development, prototype validation, and all academic documentation.</div>
+        <div class="sc-links">
+          <a class="sc-link" href="mailto:kandakuraditya@gmail.com"><span>✉</span><span class="sc-lbl">email</span>kandakuraditya@gmail.com</a>
+          <a class="sc-link" href="https://adityaportfolio-theta.vercel.app" target="_blank"><span>↗</span><span class="sc-lbl">portfolio</span>adityaportfolio-theta.vercel.app</a>
+        </div>
+      </div>
+      <!-- Shaumik Narvekar -->
+      <div class="scratch-card">
+        <div class="sc-emoji">💻</div>
+        <div class="sc-header"><h4>Shaumik Narvekar</h4></div>
+        <div class="role p2r">Software Lead</div>
+        <div class="desc">Leads application development and backend architecture — full-stack interfaces, AI encoding engines, system integration, and API development across both projects.</div>
+      </div>
+      <!-- Sanju -->
+      <div class="scratch-card">
+        <div class="sc-emoji">🤖</div>
+        <div class="sc-header"><h4>Sanju</h4></div>
+        <div class="role p3r">AI Development Lead</div>
+        <div class="desc">Owns the AI and vision stack — computer vision pipelines, edge AI models, OCR integration, and intelligent decision systems for both SparshaX and KhetRakshak.</div>
+      </div>
+      <!-- Christlan Costa -->
+      <div class="scratch-card">
+        <div class="sc-emoji">⚙️</div>
+        <div class="sc-header"><h4>Christlan Costa</h4></div>
+        <div class="role p1r">Hardware &amp; Documentation</div>
+        <div class="desc">Handles prototype assembly, solenoid coil winding, PCB layout, technical writing, and circuit documentation across both hardware proposals.</div>
+      </div>
     </div>
-    <div class="team-scratch-overlay" id="tso" data-p="0" data-done="false"><div class="tso-icon">🧽</div><div class="tso-text">Scratch to Meet the Team</div></div>
+    <div class="team-scratch-overlay" id="tso" data-p="0" data-done="false">
+      <div class="tso-icon">🧽</div>
+      <div class="tso-text">Scratch to Meet the Team</div>
+    </div>
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- ABOUT (unchanged) -->
 <div class="section" id="about" style="padding-top:2.5rem;">
   <div class="section-label">About</div>
   <div class="section-title">about asksummu</div>
@@ -518,7 +493,7 @@ footer strong{color:var(--text);}
 <!-- MODAL -->
 <div class="modal-overlay" id="projModal"><div class="modal-content" id="mc"></div></div>
 
-<!-- FOOTER (updated) -->
+<!-- FOOTER -->
 <footer>
   <strong>Team <span class="fn">asksummu</span></strong> &nbsp;·&nbsp; Final Year Engineering Research &nbsp;·&nbsp; 2025–26<br/>
   Innovating the future of Robotics &amp; AI &nbsp;·&nbsp; Discover · Explore · Share<br/>
