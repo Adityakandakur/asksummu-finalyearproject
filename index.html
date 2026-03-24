@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover,user-scalable=yes"/>
 <title>asksummu — Final Year Engineering · 2025–26</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -45,7 +45,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .soap-ring.visible{opacity:1;}
 @keyframes spin1{to{transform:rotate(360deg)}}
 .half{position:absolute;inset:0;overflow:hidden;}
-.half img{width:260px;height:260px;object-fit:contain;border-radius:50%;display:block;}
+.half img{width:100%;height:100%;object-fit:contain;border-radius:50%;display:block;}
 .half.L{clip-path:polygon(0 0,50% 0,50% 100%,0 100%);}
 .half.R{clip-path:polygon(50% 0,100% 0,100% 100%,50% 100%);}
 .half.L.open{animation:slideL .95s cubic-bezier(.76,0,.24,1) forwards;}
@@ -78,7 +78,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .iskip:hover{color:var(--p1);border-color:var(--p1);}
 #iCanvas{position:absolute;inset:0;pointer-events:none;z-index:15;}
 
-/* MAIN SITE (unchanged) */
+/* MAIN SITE */
 #mainSite{opacity:0;transition:opacity .6s ease .1s;}
 #mainSite.visible{opacity:1;}
 #mBtn{position:fixed;bottom:2rem;right:2rem;z-index:9000;width:44px;height:44px;border-radius:50%;background:var(--surface2);border:1px solid var(--border2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .3s;box-shadow:0 4px 18px rgba(0,0,0,.5);}
@@ -92,7 +92,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 @keyframes eaA{from{transform:scaleY(.25)}to{transform:scaleY(1)}}
 #dustCanvas{position:fixed;inset:0;pointer-events:none;z-index:9999;}
 
-/* NAV (unchanged) */
+/* NAV */
 nav{position:sticky;top:0;z-index:500;background:rgba(7,9,15,.93);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:60px;}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:700;color:var(--white);display:flex;align-items:center;gap:.52rem;text-decoration:none;}
 .nav-logo-img{width:29px;height:29px;border-radius:50%;object-fit:cover;}
@@ -107,7 +107,7 @@ nav{position:sticky;top:0;z-index:500;background:rgba(7,9,15,.93);backdrop-filte
 .menu-links a:hover{color:var(--p1);}
 .menu-links span{font-size:.8rem;font-family:'JetBrains Mono',monospace;color:var(--p1);display:block;margin-bottom:.2rem;}
 
-/* HERO (unchanged) */
+/* HERO */
 .hero{position:relative;padding:7rem 3rem 5rem;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,.05)0%,transparent 70%);}
 .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.032)1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.032)1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 80% at 50% 0%,black 0%,transparent 100%);}
 .hero-inner{position:relative;max-width:840px;margin:0 auto;text-align:center}
@@ -123,14 +123,14 @@ nav{position:sticky;top:0;z-index:500;background:rgba(7,9,15,.93);backdrop-filte
 @keyframes fU{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fD{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 
-/* TICKER (unchanged) */
+/* TICKER */
 .credit-banner{background:linear-gradient(90deg,rgba(201,168,76,.03)0%,rgba(201,168,76,.08)50%,rgba(201,168,76,.03)100%);border-top:1px solid rgba(201,168,76,.1);border-bottom:1px solid rgba(201,168,76,.1);padding:.78rem 0;overflow:hidden;}
 .credit-track{display:flex;gap:3.5rem;animation:tick 30s linear infinite;white-space:nowrap;}
 .credit-item{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.11em;color:var(--muted);flex-shrink:0;}
 .credit-item strong{color:var(--p1);}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* PROJECT CARDS (scratch, unchanged) */
+/* PROJECT CARDS */
 .section{max-width:1100px;margin:0 auto;padding:5rem 3rem}
 .section-label{font-size:.66rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--p1);margin-bottom:.65rem}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:700;color:var(--white);letter-spacing:-.02em;margin-bottom:1rem}
@@ -162,7 +162,7 @@ nav{position:sticky;top:0;z-index:500;background:rgba(7,9,15,.93);backdrop-filte
 .p3-lock-sub{font-family:'JetBrains Mono',monospace;font-size:.58rem;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;}
 .p3-soon{position:absolute;top:1.1rem;left:50%;transform:translateX(-50%);background:rgba(124,76,201,.1);border:1px solid rgba(124,76,201,.26);border-radius:4px;padding:3px 11px;font-size:.56rem;font-family:'JetBrains Mono',monospace;color:var(--p3);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;}
 
-/* TEAM SECTION — PROFESSIONAL REDESIGN */
+/* TEAM SECTION */
 .team-container{position:relative;margin-bottom:1.8rem;}
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem;margin-top:0.5rem;}
 .team-scratch-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:repeating-linear-gradient(45deg,#302010 0px,#302010 8px,#180e04 8px,#180e04 16px);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:auto;z-index:20;color:#cca85a;font-weight:bold;box-shadow:inset 0 0 28px rgba(0,0,0,.8);cursor:grabbing;border:1px solid var(--border2);backdrop-filter:blur(2px);}
@@ -182,7 +182,7 @@ nav{position:sticky;top:0;z-index:500;background:rgba(7,9,15,.93);backdrop-filte
 .sc-lbl{color:var(--faint);font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;margin-right:4px;}
 .p1r{color:var(--p1);}.p2r{color:var(--p2);}.p3r{color:var(--p3);}
 
-/* ABOUT (unchanged) */
+/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:1.7rem;}
 .about-card{background:var(--surface);border:1px solid var(--border2);border-radius:17px;padding:1.8rem;}
 .about-card.full{grid-column:1/-1;}
@@ -210,13 +210,13 @@ nav{position:sticky;top:0;z-index:500;background:rgba(7,9,15,.93);backdrop-filte
 .pt1{font-size:.6rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(201,168,76,.07);color:var(--p1);border:1px solid rgba(201,168,76,.17);}
 .pt2{font-size:.6rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:4px;background:rgba(76,155,201,.07);color:var(--p2);border:1px solid rgba(76,155,201,.17);}
 
-/* MODAL & PASSWORD (unchanged) */
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.83);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;z-index:10000;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;}
 .modal-overlay.active{opacity:1;visibility:visible;}
 .modal-content{background:var(--surface2);border:1px solid var(--border2);border-radius:22px;max-width:900px;width:95%;max-height:88vh;overflow-y:auto;position:relative;padding:2rem 2rem 7rem;box-shadow:0 24px 48px -12px rgba(0,0,0,.85);}
 .modal-close{position:absolute;top:.9rem;right:.9rem;font-size:1.7rem;color:var(--muted);cursor:pointer;background:none;border:none;transition:color .2s;}
 .modal-close:hover{color:var(--p1);}
-.modal-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--white);margin-bottom:.3rem;padding-right:2.5rem;}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:.3rem;padding-right:2.5rem;}
 .modal-body{margin-bottom:1rem;}
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:1.3rem 0;}
 .stat-cell{background:var(--surface);padding:.88rem;text-align:center;}
@@ -272,6 +272,7 @@ footer strong{color:var(--text);}
 .fn{color:var(--p1)}
 .footer-note{margin-top:.65rem;font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--faint);letter-spacing:.07em;line-height:1.9;}
 
+/* ========== MOBILE OPTIMIZATIONS ========== */
 @media(max-width:900px){
   .projects-grid{grid-template-columns:1fr}
   .section{padding:3rem 1.5rem}
@@ -286,24 +287,47 @@ footer strong{color:var(--text);}
   .credits-gap.open{animation:gapOpenM .8s cubic-bezier(.34,1.2,.64,1) forwards;}
   @keyframes gapOpenM{0%{width:0;opacity:0}40%{opacity:1}100%{width:95vw;opacity:1}}
   .logo-stage{width:200px;height:200px;}
-  .half img{width:200px;height:200px;}
+}
+@media(max-width:600px){
+  .logo-stage{width:160px;height:160px;}
+  .soap-ring.r1{inset:-12px;}
+  .soap-ring.r2{inset:-20px;}
+  .soap-ring.r3{inset:-28px;}
+  .half.L.open, .half.R.open{animation-duration:.7s;}
+  @keyframes slideL{to{transform:translateX(-200px)}}
+  @keyframes slideR{to{transform:translateX(200px)}}
+  .credits-gap.open{animation:gapOpenS .8s cubic-bezier(.34,1.2,.64,1) forwards;}
+  @keyframes gapOpenS{0%{width:0;opacity:0}40%{opacity:1}100%{width:90vw;opacity:1}}
+  .cred-name{font-size:1.8rem;}
+  .cred-sub{font-size:.8rem;}
+  .paper-title{font-size:.75rem;}
+  .paper-meta{font-size:.5rem;}
+  .hero{padding:4rem 1rem 2.5rem;}
+  .hero-sub{font-size:.85rem;}
+  .section-title{font-size:2rem;}
+  .project-card{padding:1.5rem;}
+  .scratch-text{font-size:.55rem;}
+  .tso-text{font-size:.7rem;}
+  .modal-title{font-size:1.5rem;}
+  .stat-num{font-size:1.2rem;}
+  .stat-lbl{font-size:.6rem;}
+  .feat .fi{font-size:1.5rem;}
+  .feat h4{font-size:.85rem;}
+  .feat p{font-size:.75rem;}
 }
 @media(max-width:480px){
   .team-grid{grid-template-columns:1fr;}
   nav{padding:0 1rem;}
-  .section{padding:2.5rem 1rem}
-  .hero{padding:4rem 1rem 2.5rem}
-  .hero-sub{font-size:.88rem;}
-  .meta-pill{font-size:.65rem;padding:5px 12px;}
-  .team-badge{font-size:.6rem;padding:6px 14px;}
-  .section-title{font-size:2rem;}
-  .project-card{padding:1.8rem 1.4rem;}
-  .scratch-text{font-size:.6rem;}
-  .tso-text{font-size:.7rem;}
-  .cred-name{font-size:1.8rem;}
-  .cred-sub{font-size:.8rem;}
-  .paper-title{font-size:.8rem;}
-  .paper-meta{font-size:.5rem;}
+  .section{padding:2rem 1rem}
+  .hero{padding:3.5rem 1rem 2rem}
+  .meta-pill{font-size:.6rem;padding:4px 10px;}
+  .team-badge{font-size:.55rem;padding:5px 12px;}
+  .card-title{font-size:1.2rem;}
+  .card-tagline{font-size:.75rem;}
+  .scratch-icon{font-size:1.8rem;}
+  .scratch-text{font-size:.5rem;}
+  .modal-buttons .modal-btn{padding:10px 14px;font-size:.75rem;}
+  .pw-box{padding:1.5rem;}
 }
 </style>
 </head>
@@ -420,19 +444,15 @@ footer strong{color:var(--text);}
   </div>
 </div>
 
-<!-- TEAM SECTION (Professional Redesign with Portfolio) -->
+<!-- TEAM SECTION (Professional) -->
 <div class="section" id="team" style="padding-top:2.5rem;padding-bottom:2rem">
   <div class="section-label">The People Behind It</div>
   <div class="section-title">Team asksummu</div>
   <div class="team-container">
     <div class="team-grid">
-      <!-- Aditya Kandakur — Leader with Portfolio -->
       <div class="scratch-card">
         <div class="sc-emoji">👑</div>
-        <div class="sc-header">
-          <h4>Aditya Kandakur</h4>
-          <span class="sc-lead-badge">LEAD</span>
-        </div>
+        <div class="sc-header"><h4>Aditya Kandakur</h4><span class="sc-lead-badge">LEAD</span></div>
         <div class="role p1r">Team Lead · Research &amp; Hardware</div>
         <div class="desc">Drives the full research agenda — hardware design, cam-magnet mechanism, PCB development, prototype validation, and all academic documentation.</div>
         <div class="sc-links">
@@ -440,36 +460,15 @@ footer strong{color:var(--text);}
           <a class="sc-link" href="https://adityaportfolio-theta.vercel.app" target="_blank"><span>↗</span><span class="sc-lbl">portfolio</span>adityaportfolio-theta.vercel.app</a>
         </div>
       </div>
-      <!-- Shaumik Narvekar -->
-      <div class="scratch-card">
-        <div class="sc-emoji">💻</div>
-        <div class="sc-header"><h4>Shaumik Narvekar</h4></div>
-        <div class="role p2r">Software Lead</div>
-        <div class="desc">Leads application development and backend architecture — full-stack interfaces, AI encoding engines, system integration, and API development across both projects.</div>
-      </div>
-      <!-- Sanju -->
-      <div class="scratch-card">
-        <div class="sc-emoji">🤖</div>
-        <div class="sc-header"><h4>Sanju</h4></div>
-        <div class="role p3r">AI Development Lead</div>
-        <div class="desc">Owns the AI and vision stack — computer vision pipelines, edge AI models, OCR integration, and intelligent decision systems for both SparshaX and KhetRakshak.</div>
-      </div>
-      <!-- Christlan Costa -->
-      <div class="scratch-card">
-        <div class="sc-emoji">⚙️</div>
-        <div class="sc-header"><h4>Christlan Costa</h4></div>
-        <div class="role p1r">Hardware &amp; Documentation</div>
-        <div class="desc">Handles prototype assembly, solenoid coil winding, PCB layout, technical writing, and circuit documentation across both hardware proposals.</div>
-      </div>
+      <div class="scratch-card"><div class="sc-emoji">💻</div><div class="sc-header"><h4>Shaumik Narvekar</h4></div><div class="role p2r">Software Lead</div><div class="desc">Leads application development and backend architecture — full-stack interfaces, AI encoding engines, system integration, and API development across both projects.</div></div>
+      <div class="scratch-card"><div class="sc-emoji">🤖</div><div class="sc-header"><h4>Sanju</h4></div><div class="role p3r">AI Development Lead</div><div class="desc">Owns the AI and vision stack — computer vision pipelines, edge AI models, OCR integration, and intelligent decision systems for both SparshaX and KhetRakshak.</div></div>
+      <div class="scratch-card"><div class="sc-emoji">⚙️</div><div class="sc-header"><h4>Christlan Costa</h4></div><div class="role p1r">Hardware &amp; Documentation</div><div class="desc">Handles prototype assembly, solenoid coil winding, PCB layout, technical writing, and circuit documentation across both hardware proposals.</div></div>
     </div>
-    <div class="team-scratch-overlay" id="tso" data-p="0" data-done="false">
-      <div class="tso-icon">🧽</div>
-      <div class="tso-text">Scratch to Meet the Team</div>
-    </div>
+    <div class="team-scratch-overlay" id="tso" data-p="0" data-done="false"><div class="tso-icon">🧽</div><div class="tso-text">Scratch to Meet the Team</div></div>
   </div>
 </div>
 
-<!-- ABOUT (unchanged) -->
+<!-- ABOUT -->
 <div class="section" id="about" style="padding-top:2.5rem;">
   <div class="section-label">About</div>
   <div class="section-title">about asksummu</div>
@@ -619,7 +618,7 @@ function startAmbientMusic() { if (mOn) return; try { createAmbientTrack(); mOn 
 function stopAmbientMusic() { mN.forEach(n => { try { n.stop && n.stop(); n.disconnect(); } catch (e) { } }); mAC && mAC.close(); mAC = null; mN = []; mOn = false; document.getElementById('mBtn').classList.remove('on'); }
 document.getElementById('mBtn').addEventListener('click', () => mOn ? stopAmbientMusic() : startAmbientMusic());
 
-/* DUST & SCRATCH (unchanged) */
+/* DUST & SCRATCH */
 const dc = document.getElementById('dustCanvas'), dctx = dc.getContext('2d'); let dw, dh, dp = [];
 function rsD() { dw = dc.width = innerWidth; dh = dc.height = innerHeight; } addEventListener('resize', rsD); rsD();
 class Dust { constructor(x, y) { this.x = x; this.y = y; this.vx = (Math.random() - .5) * 2; this.vy = Math.random() * 1.5 + .6; this.r = Math.random() * 2.6 + 1.1; this.a = Math.random() * .48 + .22; this.l = 1; this.d = .012 + Math.random() * .02; } u() { this.x += this.vx; this.y += this.vy; this.l -= this.d; this.a *= .99; return this.l > 0 && this.y < dh + 38; } draw() { dctx.save(); dctx.globalAlpha = this.a * this.l; dctx.fillStyle = '#c9a84c'; dctx.shadowColor = '#c9a84c'; dctx.shadowBlur = 6; dctx.beginPath(); dctx.arc(this.x, this.y, this.r, 0, Math.PI * 2); dctx.fill(); dctx.restore(); } }
