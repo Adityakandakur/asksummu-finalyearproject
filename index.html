@@ -98,8 +98,10 @@ body.cursor-click #cursor{transform:translate(-50%,-50%) scale(.6);}
 .half.R{clip-path:polygon(50% 0,100% 0,100% 100%,50% 100%);}
 .half.L.open{animation:slideL 1s cubic-bezier(.76,0,.24,1) forwards;}
 .half.R.open{animation:slideR 1s cubic-bezier(.76,0,.24,1) forwards;}
+.half.vanish{animation:vanishHalf .8s cubic-bezier(.16,1,.3,1) 2.2s forwards;}
 @keyframes slideL{to{transform:translateX(-60vw)}}
 @keyframes slideR{to{transform:translateX(60vw)}}
+@keyframes vanishHalf{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.85);visibility:hidden;}}
 .knife{position:absolute;top:0;left:50%;width:2px;height:100%;z-index:30;transform:translateX(-50%) scaleY(0);transform-origin:top center;background:linear-gradient(to bottom,transparent,rgba(201,168,76,.95)15%,#fff 50%,rgba(201,168,76,.95)85%,transparent);box-shadow:0 0 18px rgba(255,255,255,.9),0 0 40px rgba(201,168,76,.7);}
 .knife.cut{animation:sliceDown .2s cubic-bezier(.22,1,.36,1) forwards;}
 @keyframes sliceDown{to{transform:translateX(-50%) scaleY(1)}}
@@ -107,10 +109,10 @@ body.cursor-click #cursor{transform:translate(-50%,-50%) scale(.6);}
 /* CREDITS GAP — responsive */
 .credits-gap{position:absolute;z-index:20;display:flex;flex-direction:column;align-items:center;text-align:center;width:0;overflow:hidden;white-space:nowrap;opacity:0;}
 .credits-gap.open{animation:gapOpen .85s cubic-bezier(.34,1.15,.64,1) forwards;}
-@keyframes gapOpen{0%{width:0;opacity:0}35%{opacity:1}100%{width:min(760px,92vw);opacity:1}}
-.cred-eyebrow{font-family:'JetBrains Mono',monospace;font-size:clamp(.45rem,.9vw,.6rem);letter-spacing:.35em;text-transform:uppercase;color:var(--p1);opacity:.75;margin-bottom:.4rem;min-height:1em;}
-.cred-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,5vw,3.5rem);font-weight:700;color:var(--white);letter-spacing:-.025em;margin-bottom:.2rem;min-height:1.2em;text-shadow:0 0 80px rgba(201,168,76,.3);}
-.cred-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.7rem,2vw,1.05rem);color:var(--p1);letter-spacing:.04em;margin-bottom:1.2rem;min-height:1.2em;}
+@keyframes gapOpen{0%{width:0;opacity:0}25%{opacity:1}100%{width:min(920px,94vw);opacity:1}}
+.cred-eyebrow{font-family:'JetBrains Mono',monospace;font-size:clamp(.45rem,.9vw,.6rem);letter-spacing:.35em;text-transform:uppercase;color:var(--p1l);opacity:1;margin-bottom:.4rem;min-height:1em;font-weight:600;}
+.cred-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,5vw,3.5rem);font-weight:700;color:var(--white);letter-spacing:-.025em;margin-bottom:.2rem;min-height:1.2em;text-shadow:0 0 120px rgba(201,168,76,.5);}
+.cred-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(.7rem,2vw,1.05rem);color:var(--p1l);letter-spacing:.04em;margin-bottom:.8rem;min-height:1.2em;font-weight:500;}
 .papers-block{display:flex;flex-direction:column;gap:.5rem;width:100%;padding:0 1.2rem;opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s;}
 .papers-block.show{opacity:1;transform:translateY(0);}
 .paper-item{display:flex;align-items:flex-start;gap:10px;background:rgba(201,168,76,.05);border:1px solid rgba(201,168,76,.18);border-left:2.5px solid var(--p1);border-radius:8px;padding:.6rem .9rem;text-align:left;}
@@ -118,6 +120,8 @@ body.cursor-click #cursor{transform:translate(-50%,-50%) scale(.6);}
 .paper-title{font-family:'Cormorant Garamond',serif;font-size:clamp(.75rem,1.2vw,.92rem);font-weight:600;color:var(--white);line-height:1.35;margin-bottom:.15rem;}
 .paper-meta{font-family:'JetBrains Mono',monospace;font-size:clamp(.45rem,.7vw,.56rem);color:var(--muted);letter-spacing:.09em;}
 .paper-meta span{color:var(--p1);}
+.papers-note{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--p1);letter-spacing:.15em;text-align:center;margin-top:.75rem;opacity:1;text-transform:uppercase;font-weight:600;animation:fadeInPapers .6s ease-out forwards;}
+@keyframes fadeInPapers{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 .cred-badge{display:inline-flex;align-items:center;gap:10px;margin-top:1rem;background:rgba(201,168,76,.07);border:1px solid rgba(201,168,76,.25);border-radius:100px;padding:5px 16px;font-size:clamp(.48rem,.8vw,.6rem);letter-spacing:.18em;text-transform:uppercase;color:var(--p1);font-family:'JetBrains Mono',monospace;opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s;}
 .cred-badge.show{opacity:1;transform:translateY(0);}
 .cdot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:pulse 2s infinite;flex-shrink:0;}
@@ -735,6 +739,7 @@ footer:hover .footer-logo::after{transform:scaleX(1);}
         </div>
       </div>
     </div>
+    <div class="papers-note">↳ 10+ Research Papers Selected · These Three</div>
     <div class="cred-badge" id="cbadge">
       <span class="cdot"></span>
       <span>Team asksummu &nbsp;·&nbsp; Final Year Engineering 2025–26</span>
