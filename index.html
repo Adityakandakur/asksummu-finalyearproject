@@ -416,6 +416,7 @@ nav.scrolled{
 .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .4s;transform-origin:left;}
 .p1-card::before{background:linear-gradient(90deg,transparent,var(--p1),transparent);}
 .p2-card::before{background:linear-gradient(90deg,transparent,var(--p2),transparent);}
+.p3-card::before{background:linear-gradient(90deg,transparent,var(--p3),transparent);}
 .project-card:hover::before{opacity:1;}
 
 /* Animated background blob */
@@ -427,6 +428,7 @@ nav.scrolled{
 }
 .p1-card::after{background:var(--p1);}
 .p2-card::after{background:var(--p2);}
+.p3-card::after{background:var(--p3);}
 .project-card:hover::after{opacity:.15;transform:translate(25%,25%) scale(1.6);filter:blur(30px);}
 
 .card-float-icon{position:absolute;top:1.5rem;right:1.5rem;font-size:clamp(2.5rem,5vw,4rem);opacity:.05;animation:floatIcon 6s ease-in-out infinite;pointer-events:none;transition:opacity .4s,transform .4s;}
@@ -461,6 +463,7 @@ nav.scrolled{
 .project-card:hover .card-icon{transform:scale(1.18) translateY(-4px) rotate(-3deg);}
 .card-icon svg,.card-icon span{font-size:clamp(2rem,3.5vw,2.8rem);color:var(--p1);}
 .p2-card .card-icon svg{color:var(--p2);}
+.p3-card .card-icon svg,.p3-card .card-icon span{color:var(--p3);}
 
 .card-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.8vw,1.75rem);font-weight:700;color:var(--white);line-height:1.15;margin-bottom:.5rem;}
 .card-tagline{font-size:clamp(.78rem,1.3vw,.84rem);color:var(--muted);line-height:1.7;margin-bottom:1.4rem;}
@@ -475,10 +478,13 @@ nav.scrolled{
 .p1-card .tag:hover{box-shadow:0 6px 16px rgba(201,168,76,.25);border-color:rgba(201,168,76,.5);}
 .p2-card .tag{background:rgba(76,155,201,.1);color:var(--p2);border:1px solid rgba(76,155,201,.2);}
 .p2-card .tag:hover{box-shadow:0 6px 16px rgba(76,155,201,.25);border-color:rgba(76,155,201,.5);}
+.p3-card .tag{background:rgba(124,76,201,.1);color:var(--p3);border:1px solid rgba(124,76,201,.2);}
+.p3-card .tag:hover{box-shadow:0 6px 16px rgba(124,76,201,.25);border-color:rgba(124,76,201,.5);}
 
 .card-cta{display:inline-flex;align-items:center;gap:8px;font-size:clamp(.7rem,1.1vw,.78rem);font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:gap .35s var(--ease-out),transform .35s var(--ease-out),opacity .25s;}
 .p1-card .card-cta{color:var(--p1);}
 .p2-card .card-cta{color:var(--p2);}
+.p3-card .card-cta{color:var(--p3);}
 .project-card:hover .card-cta{gap:18px;transform:translateX(6px);}
 
 .card-mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-bottom:1.2rem;}
@@ -490,10 +496,12 @@ nav.scrolled{
 .project-card:hover .mini-stat{transform:translateY(-2px);}
 .p1-card:hover .mini-stat{border-color:rgba(201,168,76,.25);}
 .p2-card:hover .mini-stat{border-color:rgba(76,155,201,.25);}
+.p3-card:hover .mini-stat{border-color:rgba(124,76,201,.25);}
 .mini-stat:hover{box-shadow:0 8px 20px rgba(0,0,0,.3);}
 .mini-stat-val{font-family:'Cormorant Garamond',serif;font-size:clamp(.9rem,1.6vw,1.1rem);font-weight:700;line-height:1;}
 .p1-card .mini-stat-val{color:var(--p1);}
 .p2-card .mini-stat-val{color:var(--p2);}
+.p3-card .mini-stat-val{color:var(--p3);}
 .mini-stat-lbl{font-family:'JetBrains Mono',monospace;font-size:clamp(.48rem,.7vw,.55rem);color:var(--muted);letter-spacing:.08em;margin-top:.2rem;text-transform:uppercase;}
 
 /* ── P3 LOCKED ── */
@@ -1236,14 +1244,28 @@ nav.scrolled .nav-float-pill{opacity:1;transform:translateX(0);}
       </div>
     </div>
 
-    <div class="p3-locked">
-      <div class="p3-soon-badge">Under Development</div>
-      <div class="p3-lock-icon">🔒</div>
-      <div class="p3-lock-title">Research Proposal 03</div>
-      <div class="p3-lock-sub">Title Under Review · 2025–26</div>
-      <div class="p3-progress">
-        <div class="p3-progress-lbl">Research Progress</div>
-        <div class="p3-progress-bar"><div class="p3-progress-fill" id="p3fill"></div></div>
+    <div class="project-card p3-card" id="card3" onclick="openModal(3)">
+      <div class="card-float-icon">💧</div>
+      <div class="card-content">
+        <div class="card-num">Proposal 03 / 03 &nbsp;·&nbsp; Smart Water Management &nbsp;·&nbsp; IoT Systems</div>
+        <div class="card-icon" style="color:var(--p3);">💧</div>
+        <div class="card-title">Smart Multi-Tank Water Management</div>
+        <div class="card-tagline">An intelligent IoT system that automatically monitors and controls multiple water tanks using wireless sensors, central controllers, and smart automation — preventing overflow, reducing water wastage, and optimizing distribution across homes, apartments, and farms.</div>
+        <div class="card-mini-stats stagger-children">
+          <div class="mini-stat"><div class="mini-stat-val">6+</div><div class="mini-stat-lbl">Tank Support</div></div>
+          <div class="mini-stat"><div class="mini-stat-val">Real-time</div><div class="mini-stat-lbl">Monitoring</div></div>
+          <div class="mini-stat"><div class="mini-stat-val">Wireless</div><div class="mini-stat-lbl">Long-range</div></div>
+          <div class="mini-stat"><div class="mini-stat-val">Mobile</div><div class="mini-stat-lbl">Alerts</div></div>
+        </div>
+        <div class="card-tags"><span class="tag" style="background:rgba(124,76,201,.1);border:1px solid rgba(124,76,201,.2);color:var(--p3);">IoT</span><span class="tag" style="background:rgba(124,76,201,.1);border:1px solid rgba(124,76,201,.2);color:var(--p3);">Sensors</span><span class="tag" style="background:rgba(124,76,201,.1);border:1px solid rgba(124,76,201,.2);color:var(--p3);">Automation</span><span class="tag" style="background:rgba(124,76,201,.1);border:1px solid rgba(124,76,201,.2);color:var(--p3);">Smart Home</span></div>
+        <div class="card-cta" style="color:var(--p3);">View Full Proposal <span>→</span></div>
+      </div>
+      <div class="project-scratch-cover" id="c3" data-p="0" data-done="false" style="background:repeating-linear-gradient(42deg,#2a1f3f 0px,#2a1f3f 9px,#160f2b 9px,#160f2b 18px);">
+        <div class="scratch-sparkles" id="ss3"></div>
+        <span class="scratch-badge" style="color:#c498f0;background:rgba(124,76,201,.15);border:1px solid rgba(124,76,201,.3);">💧 IoT · Proposal 03</span>
+        <span class="scratch-icon">💧</span>
+        <div class="scratch-prompt">Scratch to Reveal</div>
+        <div class="scratch-sub">Drag your cursor across to uncover</div>
       </div>
     </div>
 
@@ -1750,6 +1772,11 @@ document.querySelectorAll('.project-scratch-cover').forEach(cv=>{
   cv.addEventListener('touchstart',e=>{e.preventDefault();if(cv.dataset.done==='true')return;on=true;spD(e.touches[0].clientX,e.touches[0].clientY,6);},{passive:false});
   cv.addEventListener('touchmove',e=>{e.preventDefault();if(!on)return;go(e.touches[0].clientX,e.touches[0].clientY);},{passive:false});
   cv.addEventListener('touchend',()=>on=false);
+  // C3 special handling (p3-card)
+  if(cv.id==='c3'){
+    const p3Card=document.getElementById('card3');
+    if(p3Card){p3Card.style.cssText+=';--p3-color:var(--p3);';}
+  }
 });
 
 /* ═══════════════════════════════════════════════
@@ -1811,8 +1838,8 @@ function openModal(id){
   <div class="m-section"><div class="m-section-title">🛠️ Technology Stack</div><div class="tech-stack-row"><div class="tech-stack-eye">Hardware & Firmware</div><div class="tech-stack-pills"><span class="tsp">ESP32-WROOM</span><span class="tsp">ESP32-CAM</span><span class="tsp">CD4028 Decoder IC</span><span class="tsp">IRLZ44N MOSFET</span><span class="tsp">N52 Neodymium</span><span class="tsp">32 AWG Copper Coil</span><span class="tsp">DFPlayer TTS</span><span class="tsp">LiPo Battery</span><span class="tsp">Resin 3D Print</span></div></div><div class="tech-stack-row" style="margin-top:.8rem;"><div class="tech-stack-eye">Software & AI</div><div class="tech-stack-pills"><span class="tsp">Arduino Framework</span><span class="tsp">BLE Protocol</span><span class="tsp">Tesseract OCR</span><span class="tsp">Python Braille Encoder</span><span class="tsp">Flutter (Companion App)</span><span class="tsp">Grade 1 Braille Standard</span></div></div></div>
 </div>
 <div class="m-footer">
-  <button class="modal-btn btn-primary" onclick="directDownload('college_proposal.pages','SparshaX_College_Proposal.pages')">⬇ &nbsp;Download College Proposal</button>
-  <button class="modal-btn btn-secondary" onclick="promptAndDownload('braille_proposal_team.pages','SparshaX_Team_Proposal.pages')">⬇ &nbsp;Download Team Proposal</button>
+  <button class="modal-btn btn-primary" onclick="directDownload('college_proposal.pdf','SparshaX_College_Proposal.pdf')">⬇ &nbsp;Download College Proposal</button>
+  <button class="modal-btn btn-secondary" onclick="promptAndDownload('braille_proposal_team.pdf','SparshaX_Team_Proposal.pdf')">⬇ &nbsp;Download Team Proposal</button>
 </div></div>`;}
   else if(id===2){html=`<div class="m2">
 <button class="modal-close" type="button" aria-label="Close">✕</button>
@@ -1838,10 +1865,152 @@ function openModal(id){
   <div class="m-section"><div class="m-section-title">🛠️ Technology Stack</div><div class="tech-stack-row"><div class="tech-stack-eye">Hardware</div><div class="tech-stack-pills"><span class="tsp">F450 Frame</span><span class="tsp">Pixhawk 4 Mini</span><span class="tsp">Raspberry Pi 4</span><span class="tsp">FLIR Lepton 3.5</span><span class="tsp">Arducam NIR</span><span class="tsp">5W Laser Diode</span><span class="tsp">Galvo Mirror</span><span class="tsp">SIM800L GSM</span><span class="tsp">Solar Panel</span><span class="tsp">4S LiPo</span></div></div><div class="tech-stack-row" style="margin-top:.8rem;"><div class="tech-stack-eye">Software & AI</div><div class="tech-stack-pills"><span class="tsp">YOLOv8 / MobileNetV3</span><span class="tsp">OpenCV</span><span class="tsp">PX4 Autopilot</span><span class="tsp">DroneKit Python</span><span class="tsp">USSD Gateway</span><span class="tsp">IVR (Missed Call)</span><span class="tsp">SMS Hindi TTS</span><span class="tsp">TFLite (Edge)</span></div></div></div>
 </div>
 <div class="m-footer">
-  <button class="modal-btn btn-primary" onclick="directDownload('Proposal_Simples2.pages','KhetRakshak_Simple_Proposal.pages')">⬇ &nbsp;Download Simple Proposal</button>
-  <button class="modal-btn btn-secondary2" onclick="promptAndDownload('Team_Simple.pages','KhetRakshak_Team_Proposal.pages')">⬇ &nbsp;Download Team Proposal</button>
+  <button class="modal-btn btn-primary" onclick="directDownload('Proposal_Simples2.pdf','KhetRakshak_College_Proposal.pdf')">⬇ &nbsp;Download College Proposal</button>
+  <button class="modal-btn btn-secondary2" onclick="promptAndDownload('Team_Simple.pdf','KhetRakshak_Team_Proposal.pdf')">⬇ &nbsp;Download Team Proposal</button>
 </div></div>`;}
+  else if(id===3){html=`<div class="m3" style="--p-color:var(--p3);">
+<button class="modal-close" type="button" aria-label="Close">✕</button>
+<div class="m-hero" style="border-color:rgba(124,76,201,.15);">
+  <div class="m-label" style="color:var(--p3);">Proposal 03 · IoT & Smart Automation · 2025–26</div>
+  <div class="m-title">💧 Smart Multi-Tank Water Management System</div>
+  <div class="m-subtitle">An intelligent IoT-based system that automatically monitors and controls multiple water tanks using wireless sensors and intelligent automation, preventing overflow, reducing water wastage, and enabling efficient distribution across residential, commercial, and agricultural applications.</div>
+  <div class="m-stats" style="background:rgba(124,76,201,.03);border-color:rgba(124,76,201,.15);">
+    <div class="m-stat"><div class="m-stat-num" style="color:var(--p3);">6+</div><div class="m-stat-lbl">Tanks Supported</div></div>
+    <div class="m-stat"><div class="m-stat-num" style="color:var(--p3);">Real-time</div><div class="m-stat-lbl">Monitoring</div></div>
+    <div class="m-stat"><div class="m-stat-num" style="color:var(--p3);">Wireless</div><div class="m-stat-lbl">Communication</div></div>
+    <div class="m-stat"><div class="m-stat-num" style="color:var(--p3);">Mobile</div><div class="m-stat-lbl">Alerts</div></div>
+    <div class="m-stat"><div class="m-stat-num" style="color:var(--p3);">0 Manual</div><div class="m-stat-lbl">Intervention</div></div>
+    <div class="m-stat"><div class="m-stat-num" style="color:var(--p3);">30%</div><div class="m-stat-lbl">Water Saved</div></div>
+  </div>
+</div>
+<div class="m-body">
+  <div class="m-section" style="border-bottom-color:rgba(124,76,201,.15);">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> Introduction
+    </div>
+    <div class="m-prose">Water management in homes, apartments, farms, and industries often uses multiple tanks. Manual monitoring causes overflow, pump damage, water wastage, and uneven distribution across systems. This project proposes a smart IoT-based system that automatically monitors and controls multiple water tanks using wireless sensors and intelligent automation.</div>
+  </div>
+  
+  <div class="m-section" style="border-bottom-color:rgba(124,76,201,.15);">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> Problem Statement
+    </div>
+    <div class="m-prose"><strong>Current Challenges:</strong></div>
+    <ul style="margin-top:.8rem;padding-left:1.5rem;color:var(--muted);font-size:clamp(.75rem,1.2vw,.83rem);line-height:1.8;">
+      <li>Manual tank monitoring is time-consuming and prone to human error</li>
+      <li>Manual pump control leads to overflow and system damage</li>
+      <li>Water overflow results in significant wastage and property damage</li>
+      <li>Long distance wiring for sensors is expensive and difficult to install</li>
+      <li>Unbalanced water distribution between multiple tanks</li>
+    </ul>
+  </div>
 
+  <div class="m-section" style="border-bottom-color:rgba(124,76,201,.15);">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> Proposed Solution
+    </div>
+    <div class="m-prose">Use IoT sensors and wireless communication to monitor tank levels, pipelines, and pump operations. A central controller automatically manages pumps and valves based on real-time tank data, with mobile and display-based status monitoring and smart alerts.</div>
+  </div>
+
+  <div class="m-section" style="border-bottom-color:rgba(124,76,201,.15);">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> System Structure
+    </div>
+    <div class="m-prose" style="margin-bottom:1.2rem;"><strong>Main Tank Unit:</strong></div>
+    <ul style="margin-bottom:1.2rem;padding-left:1.5rem;color:var(--muted);font-size:clamp(.75rem,1.2vw,.83rem);line-height:1.8;">
+      <li>Monitor water level with ultrasonic sensor</li>
+      <li>Monitor inflow and outflow rates</li>
+      <li>Control main pump operation</li>
+    </ul>
+    <div class="m-prose" style="margin-bottom:1.2rem;"><strong>Upper Tank Units:</strong></div>
+    <ul style="margin-bottom:1.2rem;padding-left:1.5rem;color:var(--muted);font-size:clamp(.75rem,1.2vw,.83rem);line-height:1.8;">
+      <li>Monitor tank water level independently</li>
+      <li>Send wireless data to central controller</li>
+      <li>Detect and alert on overflow conditions</li>
+    </ul>
+    <div class="m-prose" style="margin-bottom:.8rem;"><strong>Central Controller:</strong></div>
+    <ul style="padding-left:1.5rem;color:var(--muted);font-size:clamp(.75rem,1.2vw,.83rem);line-height:1.8;">
+      <li>Collect real-time data from all tank units</li>
+      <li>Control pumps and distribution valves automatically</li>
+      <li>Display system status on local dashboard</li>
+      <li>Send mobile alerts and notifications to users</li>
+    </ul>
+  </div>
+
+  <div class="m-section" style="border-bottom-color:rgba(124,76,201,.15);">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> Key Features
+    </div>
+    <div class="feat-grid" style="grid-template-columns:repeat(2,1fr);">${[
+      {icon:'📊',title:'Real-time Monitoring',desc:'Continuous monitoring of all tank levels, flow rates, and system status'},
+      {icon:'🔗',title:'Multi-Tank Support',desc:'Support for 6+ tanks with independent sensors and wireless nodes'},
+      {icon:'🚀',title:'Smart Valve Control',desc:'Automatic valve switching for load balancing and priority-based distribution'},
+      {icon:'💧',title:'Flow Monitoring',desc:'Real-time tracking of inflow and outflow rates in liters per minute'},
+      {icon:'🚨',title:'Leak Detection',desc:'Automatic detection of unusual flow patterns indicating leaks'},
+      {icon:'⚡',title:'Automatic Pump Control',desc:'Intelligent ON/OFF control based on tank levels and system needs'},
+      {icon:'🛡️',title:'Pump Protection',desc:'Dry-run protection and overload prevention for pump safety'},
+      {icon:'📡',title:'Wireless Range',desc:'Long-distance communication up to 500+ meters using mesh networking'}
+    ].map(f=>`<div class="feat"><span class="feat-icon">${f.icon}</span><h4>${f.title}</h4><p>${f.desc}</p></div>`).join('')}</div>
+  </div>
+
+  <div class="m-section" style="border-bottom-color:rgba(124,76,201,.15);">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> Example System Configuration
+    </div>
+    <div class="m-prose"><strong>Typical Setup:</strong></div>
+    <ul style="margin-top:.8rem;margin-bottom:1rem;padding-left:1.5rem;color:var(--muted);font-size:clamp(.75rem,1.2vw,.83rem);line-height:1.8;">
+      <li>2 Main Underground Tanks (1000L each)</li>
+      <li>6 Upper Distribution Tanks (500L each)</li>
+      <li>6 Independent Pipelines with valve control</li>
+    </ul>
+    <div class="m-prose">Distributed across residential, commercial, or agricultural premises with centralized control</div>
+  </div>
+
+  <div class="m-section" style="border-bottom-color:rgba(124,76,201,.15);">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> System Advantages
+    </div>
+    <ul style="padding-left:1.5rem;color:var(--muted);font-size:clamp(.75rem,1.2vw,.83rem);line-height:1.8;">
+      <li><strong>Reduces water wastage</strong> by 25–30% through intelligent distribution</li>
+      <li><strong>Prevents overflow</strong> with real-time level monitoring and alerts</li>
+      <li><strong>Saves electricity</strong> by running pumps only when needed</li>
+      <li><strong>Reduces manual work</strong> through full automation</li>
+      <li><strong>Improves water distribution</strong> with balanced load management</li>
+    </ul>
+  </div>
+
+  <div class="m-section" style="border-bottom-color:rgba(124,76,201,.15);">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> Applications
+    </div>
+    <div class="m-prose">Ideal for smart homes, apartment complexes, hotels, industrial facilities, agricultural farms, and smart city infrastructure management.</div>
+  </div>
+
+  <div class="m-section" style="border-bottom-color:rgba(124,76,201,.15);">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> Future Improvements
+    </div>
+    <ul style="padding-left:1.5rem;color:var(--muted);font-size:clamp(.75rem,1.2vw,.83rem);line-height:1.8;">
+      <li>AI-based water consumption prediction and optimization</li>
+      <li>Rainwater harvesting system integration</li>
+      <li>Solar panel integration for pump operation</li>
+      <li>Smart irrigation system with soil moisture sensing</li>
+      <li>Cloud-based analytics and historical data tracking</li>
+    </ul>
+  </div>
+
+  <div class="m-section">
+    <div class="m-section-title" style="border-color:rgba(124,76,201,.15);">
+      <span style="color:var(--p3);">●</span> Conclusion
+    </div>
+    <div class="m-prose">An intelligent IoT-based system designed for efficient multi-tank water management, reducing wastage, preventing overflow, and automating distribution across diverse applications from smart homes to agricultural facilities.</div>
+  </div>
+</div>
+<div class="m-footer">
+  <button class="modal-btn btn-primary" onclick="directDownload('water_management_proposal.pdf','Smart_Water_Management_College_Proposal.pdf')" style="background:var(--p3);box-shadow:0 4px 24px rgba(124,76,201,.25);">⬇ &nbsp;Download College Proposal</button>
+  <button class="modal-btn btn-secondary2" onclick="promptAndDownload('water_management_team.pdf','Smart_Water_Management_Team_Proposal.pdf')" style="border-color:rgba(124,76,201,.3);color:var(--p3);">⬇ &nbsp;Download Team Proposal</button>
+</div></div>`;}
+  
   mcEl.innerHTML=html;
   pm.classList.add('active');
   mcEl.scrollTop=0;
